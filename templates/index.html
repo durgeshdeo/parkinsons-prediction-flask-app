@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkinson's Disease Prediction</title>
+</head>
+<body>
+    <h2>Enter Values to Predict Parkinson's Disease</h2>
+    <form action="/predict" method="post">
+        {% for i in range(22) %}
+            <input type="text" name="feature{{i}}" placeholder="Feature {{i+1}}" required><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+</body>
+</html>
